@@ -12,6 +12,8 @@ with open('PythonTest.txt', 'r') as file:
     for str_with_words in file.readlines():
         str_with_words = tuple(str(str_with_words).replace(";", '').split())
         print(str_with_words)
+        str1 = ''
+        str2 = ''
         for i in str_with_words:
             if i.isdigit():
                 i = num2words(i)
@@ -19,9 +21,11 @@ with open('PythonTest.txt', 'r') as file:
             print(str_for_list)
 
             if not str_for_list:
-                list_with_en.append(i)
+                str1 += i + ' '
             else:
-                list_with_ru.append(i)
+                str2 += i + ' '
+        list_with_en.append(str1)
+        list_with_ru.append(str2)
 
 print(list_with_en)
 print(list_with_ru)
